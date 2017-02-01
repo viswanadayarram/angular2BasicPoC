@@ -1,0 +1,30 @@
+<div class="container">
+    <a routerLink="/users" class="btn btn-success pull-right">Back to Users</a>
+    <md-tab-group>
+        <md-tab label="User Posts">
+            <h3>User Posts</h3>
+            <ul class="cards">
+                <li *ngFor="let post of posts">
+                    <h4>{{post.title}}</h4>
+                    <p>{{post.body}}</p>
+                </li>
+            </ul>
+        </md-tab>
+        <md-tab label="User Albums">
+            <h3>User Albums</h3>
+            <ul class="cards">
+                <li *ngFor="let album of albums">
+                    <h4>{{album.title}}</h4>
+                </li>
+            </ul>
+        </md-tab>
+        <md-tab label="User Todo's">
+            <h3>User Todo's</h3>
+            <ul class="cards">
+                <li *ngFor="let todo of todos">
+                    <h4>{{todo.title}}</h4>
+                </li>
+            </ul>
+        </md-tab>
+    </md-tab-group>
+</div>

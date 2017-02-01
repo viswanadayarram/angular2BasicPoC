@@ -1,0 +1,42 @@
+
+h1{
+    padding-left: 20px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.cards>li {
+    padding: 5px;
+    cursor: pointer;
+    margin: 10px;
+    width: 95%;
+    height: 100px;
+    vertical-align: top;
+    border: 1px solid #ccc;
+    display: inline-block;
+}
+
+section.users {
+    padding: 5px;
+}
+
+tabs-dynamic-height {
+  background-color: transparent !important;
+}
+tabs-dynamic-height md-tabs {
+  background: #f6f6f6;
+  border: 1px solid #e1e1e1;
+}
+tabs-dynamic-height md-tabs md-tabs-wrapper {
+  background: white;
+}
+tabs-dynamic-height md-tabs md-content {
+  background-color: transparent;
+}
+tabs-dynamic-height h1:first-child {
+  margin-top: 0;
+}
+

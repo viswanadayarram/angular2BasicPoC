@@ -1,0 +1,11 @@
+<div class="col-md-8">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="{{parentName}}" [(ngModel)]="searchFilter" (keyup.enter)="onClick()">
+        <div class="input-group-btn">
+            <button class="btn btn-success" type="button" (click)="onClick()">Go</button>
+        </div>
+        <div class="input-group-btn">
+            <button class="btn btn-default" type="button" (click)="clear()">Clear</button>
+        </div>
+    </div>
+</div>

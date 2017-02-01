@@ -1,0 +1,79 @@
+<div class="container">
+
+    <div class="row">
+        <search-component parentName="Search Users" (search)="onSearch($event)" (clear)="onClear($event)"></search-component>
+        <!--<div class="col-md-8">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Name" [(ngModel)]="searchFilter">
+                <div class="input-group-btn">
+                    <button class="btn btn-success" type="button" (click)="searchUsers()">Go</button>
+                </div>
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="button" (click)="clear()">Clear</button>
+                </div>
+            </div> 
+        </div>!-->
+        <div class="col-md-2">
+            <div class="btn-group pull-right">
+                <button type="button" class="btn" [ngClass]="!isDetailsView ? 'btn btn-success' : 'btn'" (click)="toggle(false)">List</button>
+                <button type="button" class="btn" [ngClass]="isDetailsView ? 'btn btn-success' : 'btn'" (click)="toggle(true)">Detail</button>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <a routerLink="/users/new" href="#" class="btn btn-success">New</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <section class="users">
+
+                <table class="table table-bordered table-hover" *ngIf="!isDetailsView">
+                    <thead>
+                        <tr>
+                            <td><strong>Name</strong></td>
+                            <td><strong>Email</strong></td>
+                            <td><strong>Phone</strong></td>
+                            <td><strong>Website</strong></td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let usr of filteredData">
+                            <td>{{usr.name}}</td>
+                            <td>{{usr.email}}</td>
+                            <td>{{usr.phone | uppercase}}</td>
+                            <td>
+                                <a target="_blank" href="http://{{usr.website}}">{{usr.website}}</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="filteredData.length === 0">
+                        <tr>
+                            <td colspan="4">
+                                <h1>No Data!</h1>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <section class="users" *ngIf="isDetailsView">
+                <ul class="cards">
+                    <li *ngFor="let usr of filteredData" (click)="showUser(usr)" [highlight]="usr">
+                        <p><strong>{{usr.name}}</strong></p>
+                        <em><a target="_blank" href="http://{{usr.website}}">{{usr.website}}</a></em>
+                        <p>Street: {{usr.address?.street}}</p>
+                        <p>suite: {{usr.address?.suite}}</p>
+                        <p>city: {{usr.address?.city}}</p>
+                        <p>zipcode: {{usr.address?.zipcode}}</p>
+                        <p>Company: {{usr.company?.name}}</p>
+                        <em><a target="_blank" href="http://{{usr.website}}">{{usr.website}}</a></em>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>

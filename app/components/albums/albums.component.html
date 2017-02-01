@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <search-component parentName="Search Albums" (search)="onSearch($event)" (clear)="onClear($event)"></search-component>
+    </div>
+    <div class="row">
+        <div *ngFor="let album of filteredAlbums">
+            <div class="alert">
+                {{album.title}}
+            </div>
+        </div>
+    </div>
+</div>
