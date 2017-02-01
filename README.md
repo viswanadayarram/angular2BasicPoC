@@ -1,54 +1,43 @@
-# angular2BasicPoC
+# Angular 2 Basic PoC
 Angular 2 Basic Example project
 
-Create an angular2 application 
-Create a component ‘nav.component’ with application title and navigation links.
-Navigation Links
-Users
-Todos
-Albums
-Navigation menu should be available in every page and corresponding menu item should be highlighted when you visit a route.
-Create a component named ‘user.list.component’ which shows information about users. 
-On clicking an ‘user’ item it should redirect to a new route (user/userid) which shows all the information about the user
-User posts
-User albums
-User to-do’s
-Each of the above posts, albums and todos are individual components which retrieve required information based on userid from respective services.
-Create a component named ‘post.list.component’ which shows user posts when a userid parameter is sent.
-		
-Create a component named ‘album.list.component’ which shows user album when a userid parameter is sent. If a parameter is not available show all albums.
-		
-Create a component named ‘todo.list.component’ which shows user todo when a parameter is sent. If a parameter is not available show all albums
-		
-All services should follow these rules 
-Demonstrate rxjs observables
-Error handling
-Dependency Injection (Inject the service where ever required)
+This repository holds the Angular 2 sample project and mailnly it coantian the type script and HTML, CSS.
 
-Create a component named ‘search.component’ which is helps user to perform search operations 
-It should have input[type=text] , ‘search’ button and ‘clear’ button.
-On clicking ‘search’, component should emit an event with search criteria to parent component
-Use search component in user list and album list components.
-Search component label should change to ‘user’ or ‘album’ based on the type of parent component.
+It's been extended with testing support so you can start writing tests immediately.
 
-Create a directive ‘highlight.directive.ts’ to which should highlight (the color of the text should change to ‘red’) all the users who has ‘LLC’ in the company name.
+It exists primarily to get you started quickly with learning and prototyping in Angular
 
-Demonstrate form validation with angular2 by creating a new user registration page.
-A new button on ‘user.list.component’ should navigate to a new route (user/new)
-Create user, address classes and bind them to create a registration page. 
-Form should have following fields. Submit event should take the user object and log into console.
-FirstName*
-LastName*
-MiddleName
-Email*
-Street*
-Country*  
-City*
-* -required field.
+<h2>Prerequisites</h2>
 
-Integrate a third party module into your application and demonstrate it (third party can be anything)
-Ex: ng2-bootstrap, PrimeNG for Angular2, 
-Material designs for Angular2 (I like this)
-The template layouts (html design) is up to your creativity. You can refer the practice sessions for template layouts.
+Node.js and npm are essential to Angular development.
 
-Organize your code in following folder structure
+Get it now if it's not already installed on your machine.
+
+Verify that you are running at least node v4.x.x and npm 3.x.x by running node -v and npm -v in a terminal/console window. Older versions produce errors.
+
+We recommend nvm for managing multiple versions of node and npm.
+
+<h2>Create a new project based on the angular2BasicPoC</h2>
+
+Clone this repo into new project folder (e.g., my-proj).
+
+git clone https://github.com/angular/angular2BasicPoC  my-proj
+cd my-proj
+We have no intention of updating the source on angular/angular2BasicPoC. Discard the .git folder..
+
+rm -rf .git  # OS/X (bash)
+rd .git /S/Q # windows
+
+<h2>Install npm packages</h2>
+
+See npm and nvm version notes above
+Install the npm packages described in the package.json and verify that it works:
+
+npm install
+npm start
+Doesn't work in Bash for Windows which does not support servers as of January, 2017.
+The npm start command first compiles the application, then simultaneously re-compiles and runs the lite-server. Both the compiler and the server watch for file changes.
+
+Shut it down manually with Ctrl-C.
+
+You're ready to write your application.
